@@ -1,0 +1,36 @@
+# Site identity — edit these to personalize the whole site
+title: "Your Name"
+name: "Your Name"
+tagline: "Software engineer who loves building for the web."
+description: "Portfolio, resume, and blog of Your Name."
+url: "https://abb001.github.io"
+baseurl: ""
+email: "you@example.com"
+resume_pdf: "/assets/resume.pdf"
+
+social:
+  github: "https://github.com/abb001"
+  linkedin: ""
+  twitter: ""
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  posts:
+    permalink: /blog/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+exclude:
+  - README.md
+  - node_modules

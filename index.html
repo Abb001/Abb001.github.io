@@ -1,0 +1,40 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <div class="hero-glass glass tilt">
+    <p class="eyebrow">Hello, I'm</p>
+    <h1 class="hero-title">{{ site.name }}</h1>
+    <p class="hero-tagline">{{ site.tagline }}</p>
+    <div class="hero-actions">
+      <a href="/projects.html" class="btn btn-primary">View Projects</a>
+      <a href="/resume.html" class="btn btn-ghost">See Resume</a>
+    </div>
+  </div>
+</section>
+
+<section class="section container reveal">
+  <div class="section-header">
+    <h2>Featured Projects</h2>
+    <a href="/projects.html" class="link-arrow">View all →</a>
+  </div>
+  <div class="card-grid">
+    {% assign featured = site.data.projects | where: "featured", true %}
+    {% for project in featured limit: 3 %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section container reveal">
+  <div class="section-header">
+    <h2>Latest from the Blog</h2>
+    <a href="/blog.html" class="link-arrow">View all →</a>
+  </div>
+  <div class="blog-list">
+    {% for post in site.posts limit: 3 %}
+      {% include blog-card.html post=post %}
+    {% endfor %}
+  </div>
+</section>

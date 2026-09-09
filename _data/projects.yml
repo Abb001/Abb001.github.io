@@ -1,0 +1,35 @@
+- title: "Project One"
+  description: "A short description of what this project does, the problem it solves, and the impact it had."
+  tags: ["Web", "React"]
+  emoji: "🚀"
+  accent: "#7c5cff"
+  featured: true
+  live_url: ""
+  repo_url: "https://github.com/abb001"
+
+- title: "Project Two"
+  description: "Another project description. Swap this out with real work — an API, a tool, a data pipeline."
+  tags: ["API", "Node"]
+  emoji: "⚙️"
+  accent: "#38d6ff"
+  featured: true
+  live_url: ""
+  repo_url: "https://github.com/abb001"
+
+- title: "Project Three"
+  description: "Describe this project's purpose, the stack used, and a link to see it live or read the code."
+  tags: ["Mobile", "Design"]
+  emoji: "📱"
+  accent: "#ff6fb0"
+  featured: true
+  live_url: ""
+  repo_url: "https://github.com/abb001"
+
+- title: "Project Four"
+  description: "A fourth sample project, shown here to demonstrate the filterable tag grid on the Projects page."
+  tags: ["Web", "Design"]
+  emoji: "🎨"
+  accent: "#ffd166"
+  featured: false
+  live_url: ""
+  repo_url: "https://github.com/abb001"

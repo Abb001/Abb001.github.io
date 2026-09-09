@@ -1,0 +1,24 @@
+{% assign current = page.url %}
+<header class="site-header glass" id="siteHeader">
+  <div class="header-inner">
+    <a href="/" class="logo">{{ site.name | default: "Your Name" }}</a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="/" class="nav-link{% if current == '/' %} active{% endif %}">Home</a>
+      <a href="/projects.html" class="nav-link{% if current == '/projects.html' %} active{% endif %}">Projects</a>
+      <a href="/resume.html" class="nav-link{% if current == '/resume.html' %} active{% endif %}">Resume</a>
+      <a href="/blog.html" class="nav-link{% if current == '/blog.html' or page.layout == 'post' %} active{% endif %}">Blog</a>
+      <a href="/contact.html" class="nav-link{% if current == '/contact.html' %} active{% endif %}">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle color theme">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+      <button id="navToggle" class="icon-btn nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,24 @@
+---
+layout: default
+title: Projects
+description: "A collection of things I've built."
+---
+<section class="page-header">
+  <h1>Projects</h1>
+  <p>A collection of things I've built.</p>
+</section>
+
+<section class="container">
+  {% assign alltags = site.data.projects | map: "tags" | join: "," | split: "," | uniq | sort %}
+  <div class="filter-bar" id="projectFilters">
+    <button class="filter-chip active" data-filter="all">All</button>
+    {% for tag in alltags %}
+      {% if tag != "" %}<button class="filter-chip" data-filter="{{ tag | downcase }}">{{ tag }}</button>{% endif %}
+    {% endfor %}
+  </div>
+  <div class="card-grid" id="projectGrid">
+    {% for project in site.data.projects %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+</section>

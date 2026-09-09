@@ -1,0 +1,20 @@
+<article class="card glass tilt" data-tags="{{ include.project.tags | join: ',' | downcase }}">
+  <div class="card-media" style="--card-accent: {{ include.project.accent | default: '#7c5cff' }}">
+    <span class="card-emoji">{{ include.project.emoji | default: "🧩" }}</span>
+  </div>
+  <div class="card-body">
+    <h3>{{ include.project.title }}</h3>
+    <p>{{ include.project.description }}</p>
+    <div class="tag-row">
+      {% for tag in include.project.tags %}<span class="tag-pill">{{ tag }}</span>{% endfor %}
+    </div>
+    <div class="card-links">
+      {% if include.project.live_url and include.project.live_url != "" %}
+        <a href="{{ include.project.live_url }}" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Live</a>
+      {% endif %}
+      {% if include.project.repo_url and include.project.repo_url != "" %}
+        <a href="{{ include.project.repo_url }}" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Code</a>
+      {% endif %}
+    </div>
+  </div>
+</article>
