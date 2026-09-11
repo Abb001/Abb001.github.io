@@ -68,33 +68,6 @@ p { margin: 0; }
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* Animated background blobs ---------------------------------------------- */
-.bg-blobs {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  overflow: hidden;
-  filter: blur(70px);
-  pointer-events: none;
-}
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.5;
-  animation: float 22s ease-in-out infinite alternate;
-}
-[data-theme="dark"] .blob { opacity: 0.35; }
-.blob-1 { width: 480px; height: 480px; background: var(--accent-1); top: -10%; left: -10%; animation-duration: 22s; }
-.blob-2 { width: 420px; height: 420px; background: var(--accent-2); top: 15%; right: -15%; animation-duration: 26s; animation-delay: -4s; }
-.blob-3 { width: 380px; height: 380px; background: var(--accent-3); bottom: -15%; left: 15%; animation-duration: 20s; animation-delay: -8s; }
-.blob-4 { width: 300px; height: 300px; background: var(--accent-4); bottom: 5%; right: 10%; animation-duration: 24s; animation-delay: -12s; opacity: 0.3; }
-
-@keyframes float {
-  0%   { transform: translate(0, 0) scale(1); }
-  50%  { transform: translate(30px, -40px) scale(1.08); }
-  100% { transform: translate(-20px, 20px) scale(0.95); }
-}
-
 /* Glass primitive ---------------------------------------------------------- */
 .glass {
   background: var(--glass-bg);
