@@ -91,6 +91,39 @@ document.addEventListener('DOMContentLoaded', function () {
   setupFilter('projectFilters', '#projectGrid .card');
   setupFilter('artFilters', '#artGrid .card');
 
+  // Hero globe orbit animation
+  var heroGlobe = document.querySelector('.hero-globe');
+  if (heroGlobe && window.innerWidth > 900) {
+    var dots = heroGlobe.querySelectorAll('.orbit-dot');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var rx = 140, ry = 38;
+    var speed = 0.00018;
+    var offsets = [];
+    dots.forEach(function (dot, i) {
+      offsets.push((Math.PI * 2 / dots.length) * i);
+    });
+    function positionDots(time) {
+      dots.forEach(function (dot, i) {
+        var angle = offsets[i] + time * speed;
+        var x = Math.cos(angle) * rx;
+        var y = Math.sin(angle) * ry;
+        var depth = Math.sin(angle);
+        dot.style.transform = 'translate(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px)';
+        dot.style.opacity = (0.45 + (depth + 1) / 2 * 0.55).toFixed(2);
+        dot.classList.toggle('behind', depth < 0);
+        dot.classList.toggle('label-left', x < 0);
+      });
+    }
+    if (reduceMotion) {
+      positionDots(0);
+    } else {
+      requestAnimationFrame(function loop(time) {
+        positionDots(time);
+        requestAnimationFrame(loop);
+      });
+    }
+  }
+
   // Footer year
   var yearEl = document.getElementById('year');
   if (yearEl) { yearEl.textContent = new Date().getFullYear(); }

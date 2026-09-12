@@ -4,14 +4,24 @@ title: Home
 ---
 <section class="hero">
   <div class="hero-panel paper tilt">
-    <span class="eyebrow">{{ site.location | default: "Based remotely" }}</span>
-    <h1 class="hero-title">{{ site.tagline }}</h1>
-    <p class="hero-tagline">I'm {{ site.name }}. I split my time between writing code and making art — this is where both live.</p>
-    <div class="hero-actions">
-      <a href="/dev-projects.html" class="btn btn-primary">See dev projects</a>
-      <a href="/fine-art.html" class="btn btn-ghost">See fine art</a>
+    <div class="hero-copy">
+      <span class="eyebrow">{{ site.location | default: "Based remotely" }}</span>
+      <h1 class="hero-title">{{ site.tagline }}</h1>
+      <p class="hero-tagline">I'm {{ site.name }}. I split my time between writing code and making art — this is where both live.</p>
+      <div class="hero-actions">
+        <a href="/dev-projects.html" class="btn btn-primary">See dev projects</a>
+        <a href="/fine-art.html" class="btn btn-ghost">See fine art</a>
+      </div>
+      <div class="scroll-hint">↓ scroll</div>
     </div>
-    <div class="scroll-hint">↓ scroll</div>
+    <div class="hero-globe" aria-hidden="true">
+      <div class="globe-sphere"></div>
+      <div class="globe-ring"></div>
+      <div class="orbit-dot"><span class="dot"></span><span class="label">Code</span></div>
+      <div class="orbit-dot"><span class="dot"></span><span class="label">Design</span></div>
+      <div class="orbit-dot"><span class="dot"></span><span class="label">Fine Art</span></div>
+      <div class="orbit-dot"><span class="dot"></span><span class="label">{{ site.location | split: "," | first | default: "Remote" }}</span></div>
+    </div>
   </div>
 </section>
 
