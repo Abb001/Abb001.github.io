@@ -1,0 +1,23 @@
+- title: "Untitled Study I"
+  medium: "Oil on canvas"
+  year: "2025"
+  tags: ["Painting"]
+  featured: true
+
+- title: "Untitled Study II"
+  medium: "Charcoal on paper"
+  year: "2025"
+  tags: ["Drawing"]
+  featured: true
+
+- title: "Fragment"
+  medium: "Digital illustration"
+  year: "2024"
+  tags: ["Digital"]
+  featured: true
+
+- title: "Quiet Room"
+  medium: "Watercolor"
+  year: "2024"
+  tags: ["Painting"]
+  featured: false

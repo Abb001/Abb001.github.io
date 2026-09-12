@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  // Liquid glass tilt + cursor spotlight
+  // Tilt + cursor spotlight (hybrid glass touch)
   document.querySelectorAll('.tilt').forEach(function (el) {
     el.addEventListener('mousemove', function (e) {
       var rect = el.getBoundingClientRect();
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Filter chips (projects + blog)
+  // Filter chips (dev projects + fine art)
   function setupFilter(barId, itemsSelector) {
     var bar = document.getElementById(barId);
     if (!bar) return;
@@ -89,14 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
   setupFilter('projectFilters', '#projectGrid .card');
-  setupFilter('blogFilters', '#blogList > div');
-
-  // Resume timeline expand/collapse
-  document.querySelectorAll('[data-toggle]').forEach(function (head) {
-    head.addEventListener('click', function () {
-      head.closest('.timeline-item').classList.toggle('open');
-    });
-  });
+  setupFilter('artFilters', '#artGrid .card');
 
   // Footer year
   var yearEl = document.getElementById('year');

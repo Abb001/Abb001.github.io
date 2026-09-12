@@ -1,8 +1,0 @@
-<a href="{{ include.post.url }}" class="blog-card-link">
-  <article class="blog-card glass">
-    <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: "%b %-d, %Y" }}</time>
-    <h3>{{ include.post.title }}</h3>
-    <p>{{ include.post.excerpt | strip_html | truncatewords: 24 }}</p>
-    <span class="read-more">Read more →</span>
-  </article>
-</a>

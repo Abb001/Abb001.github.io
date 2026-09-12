@@ -1,0 +1,12 @@
+<article class="card paper tilt" data-tags="{{ include.artwork.tags | join: ',' | downcase }}">
+  <div class="card-media">
+    {% include icon-shape.html index=include.index %}
+  </div>
+  <div class="card-body">
+    <h3>{{ include.artwork.title }}</h3>
+    <p>{{ include.artwork.medium }}{% if include.artwork.year %} · {{ include.artwork.year }}{% endif %}</p>
+    <div class="tag-row">
+      {% for tag in include.artwork.tags %}<span class="tag-pill">{{ tag }}</span>{% endfor %}
+    </div>
+  </div>
+</article>

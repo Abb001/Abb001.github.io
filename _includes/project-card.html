@@ -1,6 +1,6 @@
-<article class="card glass tilt" data-tags="{{ include.project.tags | join: ',' | downcase }}">
-  <div class="card-media" style="--card-accent: {{ include.project.accent | default: '#7c5cff' }}">
-    <span class="card-emoji">{{ include.project.emoji | default: "🧩" }}</span>
+<article class="card paper tilt" data-tags="{{ include.project.tags | join: ',' | downcase }}">
+  <div class="card-media">
+    {% include icon-shape.html index=include.index %}
   </div>
   <div class="card-body">
     <h3>{{ include.project.title }}</h3>

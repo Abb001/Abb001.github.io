@@ -1,0 +1,27 @@
+---
+layout: default
+title: Fine Art
+description: "Fine art gallery."
+---
+<header class="page-header">
+  <div class="page-header-inner">
+    <span class="section-kicker">Fine Art</span>
+    <h1>Gallery</h1>
+    <p>A collection of paintings, drawings, and other work.</p>
+  </div>
+</header>
+
+<section class="container reveal">
+  {% assign alltags = site.data.artwork | map: "tags" | join: "," | split: "," | uniq | sort %}
+  <div class="filter-bar" id="artFilters">
+    <button class="filter-chip active" data-filter="all">All</button>
+    {% for tag in alltags %}
+      {% if tag != "" %}<button class="filter-chip" data-filter="{{ tag | downcase }}">{{ tag }}</button>{% endif %}
+    {% endfor %}
+  </div>
+  <div class="card-grid" id="artGrid">
+    {% for artwork in site.data.artwork %}
+      {% include artwork-card.html artwork=artwork index=forloop.index0 %}
+    {% endfor %}
+  </div>
+</section>

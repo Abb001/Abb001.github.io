@@ -1,14 +1,13 @@
 {% assign current = page.url %}
-<header class="site-header glass" id="siteHeader">
+<header class="site-header paper" id="siteHeader">
   <div class="header-inner">
     <a href="/" class="logo">{{ site.name | default: "Your Name" }}</a>
 
     <nav class="main-nav" id="mainNav">
       <a href="/" class="nav-link{% if current == '/' %} active{% endif %}">Home</a>
-      <a href="/projects.html" class="nav-link{% if current == '/projects.html' %} active{% endif %}">Projects</a>
-      <a href="/resume.html" class="nav-link{% if current == '/resume.html' %} active{% endif %}">Resume</a>
-      <a href="/blog.html" class="nav-link{% if current == '/blog.html' or page.layout == 'post' %} active{% endif %}">Blog</a>
-      <a href="/contact.html" class="nav-link{% if current == '/contact.html' %} active{% endif %}">Contact</a>
+      <a href="/dev-projects.html" class="nav-link{% if current == '/dev-projects.html' %} active{% endif %}">Dev Projects</a>
+      <a href="/fine-art.html" class="nav-link{% if current == '/fine-art.html' %} active{% endif %}">Fine Art</a>
+      <a href="/about.html" class="nav-link{% if current == '/about.html' %} active{% endif %}">About &amp; Contact</a>
     </nav>
 
     <div class="header-actions">

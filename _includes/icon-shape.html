@@ -1,0 +1,14 @@
+{% assign shape = include.index | modulo: 6 %}
+{% if shape == 0 %}
+<svg viewBox="0 0 64 64" fill="none" stroke-width="1.5"><circle cx="24" cy="30" r="16"/><circle cx="42" cy="22" r="10"/></svg>
+{% elsif shape == 1 %}
+<svg viewBox="0 0 64 64" fill="none" stroke-width="1.5"><rect x="18" y="18" width="28" height="28" transform="rotate(45 32 32)"/></svg>
+{% elsif shape == 2 %}
+<svg viewBox="0 0 64 64" fill="none" stroke-width="1.5"><path d="M32 8 54 20v24L32 56 10 44V20z"/><path d="M10 20 32 32 54 20M32 32v24"/></svg>
+{% elsif shape == 3 %}
+<svg viewBox="0 0 64 64" fill="none" stroke-width="1.5"><path d="M32 12a20 20 0 1 1-14.1 5.9"/><path d="M32 20a12 12 0 1 1-8.5 3.5"/><path d="M32 28a4 4 0 1 1-2.8 1.2"/></svg>
+{% elsif shape == 4 %}
+<svg viewBox="0 0 64 64" fill="none" stroke-width="1.5"><path d="M32 10 50 42H14Z"/><path d="M22 34 34 54H10Z"/></svg>
+{% else %}
+<svg viewBox="0 0 64 64" fill="none" stroke-width="1.5"><path d="M32 6 55 19v26L32 58 9 45V19Z"/><path d="M32 6v26M9 19l23 13M55 19 32 32"/></svg>
+{% endif %}

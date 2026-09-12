@@ -1,14 +1,17 @@
 ---
 layout: default
-title: Projects
-description: "A collection of things I've built."
+title: Dev Projects
+description: "Development projects I've built."
 ---
-<section class="page-header">
-  <h1>Projects</h1>
-  <p>A collection of things I've built.</p>
-</section>
+<header class="page-header">
+  <div class="page-header-inner">
+    <span class="section-kicker">Development</span>
+    <h1>Dev Projects</h1>
+    <p>Things I've built — tools, apps, and experiments.</p>
+  </div>
+</header>
 
-<section class="container">
+<section class="container reveal">
   {% assign alltags = site.data.projects | map: "tags" | join: "," | split: "," | uniq | sort %}
   <div class="filter-bar" id="projectFilters">
     <button class="filter-chip active" data-filter="all">All</button>
@@ -18,7 +21,7 @@ description: "A collection of things I've built."
   </div>
   <div class="card-grid" id="projectGrid">
     {% for project in site.data.projects %}
-      {% include project-card.html project=project %}
+      {% include project-card.html project=project index=forloop.index0 %}
     {% endfor %}
   </div>
 </section>
