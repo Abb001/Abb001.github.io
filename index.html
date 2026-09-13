@@ -25,34 +25,58 @@ title: Home
   </div>
 </section>
 
-<section class="section container reveal">
-  <div class="section-header">
-    <div>
-      <span class="section-kicker">Development</span>
-      <h2>Selected projects</h2>
+<section class="stats-section reveal" data-theme="dark">
+  <div class="container">
+    <span class="section-kicker">By the numbers</span>
+    <h2 class="section-title">A bit of context</h2>
+    <div class="stats-strip">
+      <div class="stat-card">
+        <span class="tag-pill">Experience</span>
+        <div class="stat-number">5<span class="stat-unit">yrs</span></div>
+        <p class="stat-caption">Writing code, from small scripts to shipped products.</p>
+      </div>
+      <div class="stat-card">
+        <span class="tag-pill">Dev</span>
+        <div class="stat-number">12</div>
+        <p class="stat-caption">Projects built — tools, apps, and experiments.</p>
+      </div>
+      <div class="stat-card">
+        <span class="tag-pill">Fine Art</span>
+        <div class="stat-number">20<span class="stat-unit">+</span></div>
+        <p class="stat-caption">Paintings and drawings finished and shown.</p>
+      </div>
+      <div class="stat-card">
+        <span class="tag-pill">Stack</span>
+        <div class="stat-number">6</div>
+        <p class="stat-caption">Languages and tools used regularly.</p>
+      </div>
     </div>
-    <a href="/dev-projects.html" class="link-arrow">All dev projects →</a>
-  </div>
-  <div class="card-grid">
-    {% assign featured = site.data.projects | where: "featured", true %}
-    {% for project in featured limit: 3 %}
-      {% include project-card.html project=project index=forloop.index0 %}
-    {% endfor %}
   </div>
 </section>
 
-<section class="section container reveal">
-  <div class="section-header">
-    <div>
-      <span class="section-kicker">Fine Art</span>
-      <h2>Selected work</h2>
+<section class="carousel-section reveal" data-theme="light">
+  <div class="container">
+    <span class="section-kicker">Development &amp; fine art</span>
+    <h2 class="section-title">Featured work</h2>
+    <div class="carousel" id="homeCarousel">
+      <div class="carousel-track">
+        {% assign featured = site.data.projects | where: "featured", true %}
+        {% for project in featured %}
+          {% include project-card.html project=project index=forloop.index0 %}
+        {% endfor %}
+        {% assign featured_art = site.data.artwork | where: "featured", true %}
+        {% for artwork in featured_art %}
+          {% include artwork-card.html artwork=artwork index=forloop.index0 %}
+        {% endfor %}
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" data-dir="-1" aria-label="Previous">←</button>
+        <button class="carousel-btn" data-dir="1" aria-label="Next">→</button>
+      </div>
     </div>
-    <a href="/fine-art.html" class="link-arrow">Full gallery →</a>
-  </div>
-  <div class="card-grid">
-    {% assign featured_art = site.data.artwork | where: "featured", true %}
-    {% for artwork in featured_art limit: 3 %}
-      {% include artwork-card.html artwork=artwork index=forloop.index0 %}
-    {% endfor %}
+    <div class="carousel-cta">
+      <a href="/dev-projects.html" class="btn btn-ghost">View all dev projects</a>
+      <a href="/fine-art.html" class="btn btn-ghost">View full gallery</a>
+    </div>
   </div>
 </section>

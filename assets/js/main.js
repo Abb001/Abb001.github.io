@@ -124,6 +124,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Home carousel (featured dev projects + fine art)
+  document.querySelectorAll('.carousel').forEach(function (carousel) {
+    var track = carousel.querySelector('.carousel-track');
+    carousel.querySelectorAll('.carousel-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var dir = parseInt(btn.getAttribute('data-dir'), 10);
+        track.scrollBy({ left: dir * 300, behavior: 'smooth' });
+      });
+    });
+  });
+
   // Footer year
   var yearEl = document.getElementById('year');
   if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
