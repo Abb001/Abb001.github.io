@@ -2,18 +2,11 @@
 layout: default
 title: Home
 ---
-<section class="hero">
-  <div class="hero-panel paper tilt">
-    <div class="hero-copy">
-      <span class="eyebrow">{{ site.location | default: "Based remotely" }}</span>
-      <h1 class="hero-title">{{ site.tagline }}</h1>
-      <p class="hero-tagline">I'm {{ site.name }}. I split my time between writing code and making art — this is where both live.</p>
-      <div class="hero-actions">
-        <a href="/dev-projects.html" class="btn btn-primary">See dev projects</a>
-        <a href="/fine-art.html" class="btn btn-ghost">See fine art</a>
-      </div>
-      <div class="scroll-hint">↓ scroll</div>
-    </div>
+<section class="hero" data-theme="dark">
+  <div class="hero-panel">
+    <span class="eyebrow">{{ site.location | default: "Based remotely" }}</span>
+    <h1 class="hero-title">{{ site.tagline }}</h1>
+
     <div class="hero-globe" aria-hidden="true">
       <div class="globe-sphere"></div>
       <div class="globe-ring"></div>
@@ -22,6 +15,11 @@ title: Home
       <div class="orbit-dot"><span class="dot"></span><span class="label">Fine Art</span></div>
       <div class="orbit-dot"><span class="dot"></span><span class="label">{{ site.location | split: "," | first | default: "Remote" }}</span></div>
     </div>
+
+    <div class="hero-actions">
+      <a href="/about.html" class="btn btn-primary">Get in touch</a>
+    </div>
+    <div class="scroll-hint">↓ scroll</div>
   </div>
 </section>
 
@@ -33,22 +31,30 @@ title: Home
       <div class="stat-card">
         <span class="tag-pill">Experience</span>
         <div class="stat-number">5<span class="stat-unit">yrs</span></div>
+        <div class="stat-card-visual"></div>
         <p class="stat-caption">Writing code, from small scripts to shipped products.</p>
+        <span class="stat-card-expand"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M8 16 16 8M9 8h7v7"/></svg></span>
       </div>
       <div class="stat-card">
         <span class="tag-pill">Dev</span>
         <div class="stat-number">12</div>
+        <div class="stat-card-visual"></div>
         <p class="stat-caption">Projects built — tools, apps, and experiments.</p>
+        <span class="stat-card-expand"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M8 16 16 8M9 8h7v7"/></svg></span>
       </div>
       <div class="stat-card">
         <span class="tag-pill">Fine Art</span>
         <div class="stat-number">20<span class="stat-unit">+</span></div>
+        <div class="stat-card-visual"></div>
         <p class="stat-caption">Paintings and drawings finished and shown.</p>
+        <span class="stat-card-expand"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M8 16 16 8M9 8h7v7"/></svg></span>
       </div>
       <div class="stat-card">
         <span class="tag-pill">Stack</span>
         <div class="stat-number">6</div>
+        <div class="stat-card-visual"></div>
         <p class="stat-caption">Languages and tools used regularly.</p>
+        <span class="stat-card-expand"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M8 16 16 8M9 8h7v7"/></svg></span>
       </div>
     </div>
   </div>

@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (heroGlobe && window.innerWidth > 900) {
     var dots = heroGlobe.querySelectorAll('.orbit-dot');
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var rx = 140, ry = 38;
+    var rx = 170, ry = 45;
     var speed = 0.00018;
     var offsets = [];
     dots.forEach(function (dot, i) {
