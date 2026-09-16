@@ -245,7 +245,7 @@ html[data-theme="light"] .icon-sun { display: none; }
 
 /* Hero glass cube (WebGL) ----------------------------------------------------------- */
 .hero-stage { position: relative; width: 100%; margin: 8px 0; }
-.hero-cube-canvas { display: none; width: 100%; height: 380px; }
+.hero-cube-canvas { display: none; width: 100%; height: 440px; }
 
 /* Only swap the HTML headline for the canvas once the scene actually starts,
    so no-WebGL / small-screen / reduced-motion visitors keep the real text. */

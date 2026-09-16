@@ -118,7 +118,7 @@ function build(canvas, text, textColor, backdropColor) {
   scene.add(textPlane);
 
   var cube = new Mesh(
-    new BoxGeometry(1.65, 1.65, 1.65),
+    new BoxGeometry(2.5, 2.5, 2.5),
     new MeshPhysicalMaterial({
       transmission: 1,
       thickness: 1.6,
@@ -129,11 +129,9 @@ function build(canvas, text, textColor, backdropColor) {
       clearcoatRoughness: 0.08,
     })
   );
-  // Offset to the right rather than dead-centre: centred looks closer to the
-  // reference, but it sits on top of the middle of every line and the headline
-  // stops being readable. Off to one side keeps the refraction on show without
-  // eating the sentence.
-  cube.position.set(2.05, -0.1, 0);
+  // Centred and large, matching the reference. This does sit over the middle
+  // of the headline — the full text stays available to screen readers via the
+  // visually-hidden <h1>, and to everyone on the fallback paths below.
   scene.add(cube);
 
   var restX = -0.28;
