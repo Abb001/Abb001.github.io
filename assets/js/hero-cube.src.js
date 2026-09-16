@@ -136,16 +136,30 @@ function build(canvas, text, textColor, backdropColor) {
 
   var restX = -0.28;
   var restY = 0.38;
-  var targetX = restX;
-  var targetY = restY;
+  // Drift speeds (rad/sec) are deliberately not a simple ratio of each other,
+  // so the combined orientation takes a very long time to repeat and the idle
+  // motion never reads as a looping animation.
+  var DRIFT_X = 0.055;
+  var DRIFT_Y = 0.13;
+  var IDLE_MS = 2000;
+
+  // Split into a drifting base (only advances while idle) plus a pointer
+  // offset. Keeping them separate means handing control back and forth never
+  // makes the cube unwind accumulated turns.
+  var baseX = restX;
+  var baseY = restY;
+  var offsetX = 0;
+  var offsetY = 0;
+  var lastPointerAt = -Infinity;
   cube.rotation.x = restX;
   cube.rotation.y = restY;
 
   document.addEventListener('pointermove', function (e) {
     var nx = (e.clientX / window.innerWidth) * 2 - 1;
     var ny = (e.clientY / window.innerHeight) * 2 - 1;
-    targetY = restY + nx * 0.7;
-    targetX = restX - ny * 0.5;
+    offsetY = nx * 0.7;
+    offsetX = -ny * 0.5;
+    lastPointerAt = performance.now();
   });
 
   function resize() {
@@ -159,7 +173,18 @@ function build(canvas, text, textColor, backdropColor) {
   resize();
   window.addEventListener('resize', resize);
 
-  renderer.setAnimationLoop(function () {
+  var prevTime = null;
+  renderer.setAnimationLoop(function (time) {
+    var dt = prevTime === null ? 0 : Math.min((time - prevTime) / 1000, 0.1);
+    prevTime = time;
+
+    if (time - lastPointerAt > IDLE_MS) {
+      baseX += DRIFT_X * dt;
+      baseY += DRIFT_Y * dt;
+    }
+
+    var targetX = baseX + offsetX;
+    var targetY = baseY + offsetY;
     cube.rotation.x += (targetX - cube.rotation.x) * 0.05;
     cube.rotation.y += (targetY - cube.rotation.y) * 0.05;
     renderer.render(scene, camera);
