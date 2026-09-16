@@ -5,18 +5,9 @@ title: Home
 <section class="hero" data-theme="dark">
   <div class="hero-panel">
     <span class="eyebrow">{{ site.location | default: "Based remotely" }}</span>
-    <div class="hero-title-wrap">
+    <div class="hero-stage">
       <h1 class="hero-title">{{ site.tagline }}</h1>
-      <div class="hero-cube-scene" aria-hidden="true">
-        <div class="hero-cube">
-          <span class="cube-face cube-front"></span>
-          <span class="cube-face cube-back"></span>
-          <span class="cube-face cube-right"></span>
-          <span class="cube-face cube-left"></span>
-          <span class="cube-face cube-top"></span>
-          <span class="cube-face cube-bottom"></span>
-        </div>
-      </div>
+      <canvas class="hero-cube-canvas" aria-hidden="true"></canvas>
     </div>
 
     <div class="hero-actions">
@@ -25,6 +16,8 @@ title: Home
     <div class="scroll-hint">↓ scroll</div>
   </div>
 </section>
+
+<script type="module" src="/assets/js/hero-cube.js"></script>
 
 <section class="stats-section reveal" data-theme="dark">
   <div class="container">

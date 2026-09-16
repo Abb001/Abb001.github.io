@@ -23,3 +23,4 @@ plugins:
 exclude:
   - README.md
   - node_modules
+  - assets/js/hero-cube.src.js
