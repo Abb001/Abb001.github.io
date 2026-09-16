@@ -258,29 +258,24 @@ html[data-theme="light"] .icon-sun { display: none; }
   position: relative;
   width: 100%; height: 100%;
   transform-style: preserve-3d;
-  animation: cube-spin 13s linear infinite;
-}
-@keyframes cube-spin {
-  from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-  to { transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg); }
+  transform: rotateX(-18deg) rotateY(22deg);
 }
 .cube-face {
   position: absolute;
   width: 230px; height: 230px;
-  border: 3px solid;
+  border: 2px solid rgba(255, 255, 255, 0.5);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
   backdrop-filter: blur(3px);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.18), inset 0 0 30px rgba(255, 255, 255, 0.06);
 }
-.cube-front  { transform: translateZ(115px); border-color: #ff5a6e; box-shadow: 0 0 30px rgba(255, 90, 110, 0.55), inset 0 0 30px rgba(255, 90, 110, 0.2); }
-.cube-back   { transform: translateZ(-115px) rotateY(180deg); border-color: #5a8cff; box-shadow: 0 0 30px rgba(90, 140, 255, 0.55), inset 0 0 30px rgba(90, 140, 255, 0.2); }
-.cube-right  { transform: rotateY(90deg) translateZ(115px); border-color: #6effaa; box-shadow: 0 0 30px rgba(110, 255, 170, 0.55), inset 0 0 30px rgba(110, 255, 170, 0.2); }
-.cube-left   { transform: rotateY(-90deg) translateZ(115px); border-color: #ffdc5a; box-shadow: 0 0 30px rgba(255, 220, 90, 0.55), inset 0 0 30px rgba(255, 220, 90, 0.2); }
-.cube-top    { transform: rotateX(90deg) translateZ(115px); border-color: #c882ff; box-shadow: 0 0 30px rgba(200, 130, 255, 0.55), inset 0 0 30px rgba(200, 130, 255, 0.2); }
-.cube-bottom { transform: rotateX(-90deg) translateZ(115px); border-color: #5adcff; box-shadow: 0 0 30px rgba(90, 220, 255, 0.55), inset 0 0 30px rgba(90, 220, 255, 0.2); }
+[data-theme="light"] .cube-face { border-color: rgba(20, 30, 45, 0.4); box-shadow: 0 0 30px rgba(20, 30, 45, 0.12), inset 0 0 30px rgba(20, 30, 45, 0.04); }
+.cube-front  { transform: translateZ(115px); }
+.cube-back   { transform: translateZ(-115px) rotateY(180deg); }
+.cube-right  { transform: rotateY(90deg) translateZ(115px); }
+.cube-left   { transform: rotateY(-90deg) translateZ(115px); }
+.cube-top    { transform: rotateX(90deg) translateZ(115px); }
+.cube-bottom { transform: rotateX(-90deg) translateZ(115px); }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-cube { animation: none; }
-}
 @media (max-width: 640px) {
   .hero-cube-scene { display: none; }
 }

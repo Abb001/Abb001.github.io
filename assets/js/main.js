@@ -91,6 +91,26 @@ document.addEventListener('DOMContentLoaded', function () {
   setupFilter('projectFilters', '#projectGrid .card');
   setupFilter('artFilters', '#artGrid .card');
 
+  // Hero cube — follows the mouse, no autoplay loop
+  var heroCube = document.querySelector('.hero-cube');
+  if (heroCube && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var restX = -18, restY = 22;
+    var targetX = restX, targetY = restY;
+    var currentX = restX, currentY = restY;
+    document.addEventListener('mousemove', function (e) {
+      var nx = (e.clientX / window.innerWidth) * 2 - 1;
+      var ny = (e.clientY / window.innerHeight) * 2 - 1;
+      targetY = restY + nx * 40;
+      targetX = restX - ny * 30;
+    });
+    (function animateCube() {
+      currentX += (targetX - currentX) * 0.06;
+      currentY += (targetY - currentY) * 0.06;
+      heroCube.style.transform = 'rotateX(' + currentX.toFixed(2) + 'deg) rotateY(' + currentY.toFixed(2) + 'deg)';
+      requestAnimationFrame(animateCube);
+    })();
+  }
+
   // Home carousel (featured dev projects + fine art)
   document.querySelectorAll('.carousel').forEach(function (carousel) {
     var track = carousel.querySelector('.carousel-track');
