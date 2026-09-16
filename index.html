@@ -5,15 +5,18 @@ title: Home
 <section class="hero" data-theme="dark">
   <div class="hero-panel">
     <span class="eyebrow">{{ site.location | default: "Based remotely" }}</span>
-    <h1 class="hero-title">{{ site.tagline }}</h1>
-
-    <div class="hero-globe" aria-hidden="true">
-      <div class="globe-sphere"></div>
-      <div class="globe-ring"></div>
-      <div class="orbit-dot"><span class="dot"></span><span class="label">Code</span></div>
-      <div class="orbit-dot"><span class="dot"></span><span class="label">Design</span></div>
-      <div class="orbit-dot"><span class="dot"></span><span class="label">Fine Art</span></div>
-      <div class="orbit-dot"><span class="dot"></span><span class="label">{{ site.location | split: "," | first | default: "Remote" }}</span></div>
+    <div class="hero-title-wrap">
+      <h1 class="hero-title">{{ site.tagline }}</h1>
+      <div class="hero-cube-scene" aria-hidden="true">
+        <div class="hero-cube">
+          <span class="cube-face cube-front"></span>
+          <span class="cube-face cube-back"></span>
+          <span class="cube-face cube-right"></span>
+          <span class="cube-face cube-left"></span>
+          <span class="cube-face cube-top"></span>
+          <span class="cube-face cube-bottom"></span>
+        </div>
+      </div>
     </div>
 
     <div class="hero-actions">
